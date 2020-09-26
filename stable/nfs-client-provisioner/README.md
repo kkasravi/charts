@@ -52,6 +52,9 @@ The following tables lists the configurable parameters of this chart and their d
 | `image.repository`                  | Provisioner image                                           | `quay.io/external_storage/nfs-client-provisioner` |
 | `image.tag`                         | Version of provisioner image                                | `v3.1.0-k8s1.11`                                  |
 | `image.pullPolicy`                  | Image pull policy                                           | `IfNotPresent`                                    |
+| `securityContext.runAsUser`         | user id to run as                                           | `0`                                               |
+| `securityContext.runAsGroup`        | group id to run as                                          | `0`                                               |
+| `securityContext.fsGroup`           | group id for mountPath                                      | `0`                                               |
 | `storageClass.name`                 | Name of the storageClass                                    | `nfs-client`                                      |
 | `storageClass.defaultClass`         | Set as the default StorageClass                             | `false`                                           |
 | `storageClass.allowVolumeExpansion` | Allow expanding the volume                                  | `true`                                            |

@@ -25,6 +25,10 @@ spec:
         app: {{ template "nfs-client-provisioner.name" . }}
         release: {{ .Release.Name }}
     spec:
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
       serviceAccountName: {{ template "nfs-client-provisioner.serviceAccountName" . }}
       {{- if .Values.nodeSelector }}
       nodeSelector:

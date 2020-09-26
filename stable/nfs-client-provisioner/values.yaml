@@ -15,6 +15,11 @@ nfs:
   path: /ifs/kubernetes
   mountOptions:
 
+securityContext:
+  runAsUser: 0
+  runAsGroup: 0
+  fsGroup: 0
+
 # For creating the StorageClass automatically:
 storageClass:
   create: true
